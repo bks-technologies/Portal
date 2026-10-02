@@ -6,10 +6,16 @@ import "./globals.css";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
+// Adresse für Vorschaubilder: eigene Domain, sonst die Produktionsadresse von Vercel, lokal localhost.
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000");
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: { default: "Projektportal (Demo)", template: "%s · Projektportal (Demo)" },
   description: "Kundenportal für Projekte: Aufgaben, Dateiübergabe, Freigaben und Synchronisationsverlauf. Demo von BKS Technologies mit erfundenen Daten.",
-  robots: { index: false },
+  openGraph: { type: "website", locale: "de_DE", siteName: "Projektportal (Demo)" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

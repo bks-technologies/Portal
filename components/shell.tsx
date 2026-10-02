@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { ADMIN_NAME, CLIENTS, CURRENT_CLIENT, type Role } from "@/lib/data";
 import { usePortal } from "@/lib/store";
+import { LegalLinks } from "./legal-page";
 import { cx } from "./ui";
 
 type NavItem = { href: string; label: string; icon: LucideIcon; count?: number };
@@ -64,11 +65,15 @@ export function Shell({ role, children }: { role: Role; children: React.ReactNod
             <Link href="/" className="flex items-center gap-2.5">
               <span
                 className={cx(
-                  "grid size-8 place-items-center rounded-lg text-[13px] font-bold tracking-tight",
-                  admin ? "bg-white text-admin" : "bg-ink text-white",
+                  "grid size-8 grid-cols-2 gap-0.5 rounded-lg p-[7px]",
+                  admin ? "bg-white" : "bg-ink",
                 )}
+                aria-hidden
               >
-                B
+                <span className={cx("rounded-[2px]", admin ? "bg-admin" : "bg-white")} />
+                <span className="rounded-[2px] bg-accent" />
+                <span className="rounded-[2px] bg-accent" />
+                <span className={cx("rounded-[2px]", admin ? "bg-admin" : "bg-white")} />
               </span>
               <span className="leading-tight">
                 <span className="block text-sm font-semibold tracking-tight">Projektportal</span>
@@ -152,10 +157,13 @@ export function Shell({ role, children }: { role: Role; children: React.ReactNod
             <ShieldCheck className="size-3.5" strokeWidth={2} />
             Demo mit erfundenen Daten. Nichts verlässt Ihren Browser.
           </span>
-          <button onClick={reset} className="flex items-center gap-1.5 rounded px-1 font-medium text-muted hover:text-ink">
-            <RotateCcw className="size-3.5" strokeWidth={2} />
-            Demo zurücksetzen
-          </button>
+          <span className="flex items-center gap-4">
+            <button onClick={reset} className="flex items-center gap-1.5 rounded px-1 font-medium text-muted hover:text-ink">
+              <RotateCcw className="size-3.5" strokeWidth={2} />
+              Demo zurücksetzen
+            </button>
+            <LegalLinks className="text-faint" />
+          </span>
         </div>
         <main className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-8 sm:py-8">{children}</main>
       </div>

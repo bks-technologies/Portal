@@ -36,3 +36,19 @@ Stack: Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, Framer Mot
 
 Aufbau: `lib/data.ts` (Typen und Beispieldaten), `lib/store.tsx` (Zustand, Simulation),
 `components/` (Bausteine), `components/views/` (Seiten je Sicht), `app/` (Routen).
+
+## Veröffentlichen (Vercel)
+
+1. Repo nach GitHub schieben (`bks-technologies/portal`, privat reicht).
+2. In Vercel „Add New Project“ → Repo wählen. Framework wird erkannt, keine Einstellungen nötig.
+   Region Frankfurt kommt aus `vercel.json`.
+3. Optional Variable `NEXT_PUBLIC_SITE_URL` = endgültige Adresse (für Vorschaubilder beim Teilen).
+   Ohne sie nimmt das Portal die Produktionsadresse von Vercel.
+4. Domain: in Vercel `portal.bkstechnologies.de` hinzufügen, bei IONOS einen CNAME `portal` auf den
+   angezeigten Vercel-Wert setzen. MX-Einträge nicht anfassen.
+
+Keine Geheimnisse, keine Datenbank, keine Cronjobs. Impressum und Datenschutz liegen unter `/impressum`
+und `/datenschutz` (Fakten aus `lib/legal.ts`, Quelle ist `../website/lib/site.ts`). Die
+Datenschutzerklärung ist ein Entwurf.
+
+Wer externe Skripte, Analytics oder Einbettungen ergänzt, muss die CSP in `next.config.ts` erweitern.
