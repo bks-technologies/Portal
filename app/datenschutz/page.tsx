@@ -22,7 +22,7 @@ export default function Datenschutz() {
       <p>Dateien, die Sie in die Demo ziehen, verlassen Ihren Browser nicht. Der Browser liest die Datei, um eine Prüfsumme (SHA-256) zu bilden, und vergisst ihren Inhalt danach. Gespeichert werden nur Dateiname, Größe und Prüfsumme, und zwar ausschließlich auf Ihrem Gerät (siehe Abschnitt 5).</p>
 
       <h2>4. Hosting</h2>
-      <p>Die Anwendung läuft bei Vercel Inc. in der Region Frankfurt am Main. Beim Aufruf verarbeitet der Anbieter technisch notwendige Verbindungsdaten (IP-Adresse, Zeitpunkt, aufgerufene Adresse) zur Auslieferung und Absicherung der Seite (Art. 6 Abs. 1 lit. f DSGVO). Mit dem Anbieter besteht ein Auftragsverarbeitungsvertrag nach Art. 28 DSGVO.</p>
+      <p>Die Anwendung läuft bei Vercel Inc. in der Region Frankfurt am Main. Beim Aufruf verarbeitet der Anbieter technisch notwendige Verbindungsdaten (IP-Adresse, Zeitpunkt, aufgerufene Adresse) zur Auslieferung und Absicherung der Seite (Art. 6 Abs. 1 lit. f DSGVO). Vercel Inc. hat seinen Sitz in den USA; dabei können Verbindungsdaten auch in die USA übertragen werden.</p>
 
       <h2>5. Speicherung im Browser, keine Cookies</h2>
       <p>Damit Ihre Klicks in der Demo erhalten bleiben (Freigaben, Aufgaben, Dateinamen), speichert die Anwendung den Stand im lokalen Speicher Ihres Browsers (localStorage). Diese Daten werden nicht übertragen und lassen sich jederzeit über „Demo zurücksetzen“ oder durch Löschen der Websitedaten im Browser entfernen (§ 25 Abs. 2 Nr. 2 TDDDG). Die Anwendung setzt keine Cookies, nutzt keine Analyse- oder Werbedienste und lädt keine Inhalte von fremden Servern.</p>
